@@ -3,32 +3,42 @@ package tbsgame.states;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import tbsgame.Level;
+import tbsgame.ResourceManager;
+
 public class GameplayTest extends BasicGameState {
 	private int stateID;
+	private Level level;
 	
 	public GameplayTest(int stateID) {
 		this.stateID = stateID;
 	}
 
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1)
+	public void init(GameContainer gc, StateBasedGame game)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		SpriteSheet tiles = new SpriteSheet("res/tileset.png", 32, 32);
+		ResourceManager.INSTANCE.putImage("testunit", tiles.getSubImage(0, 0));
+		ResourceManager.INSTANCE.putImage("tile_grass", tiles.getSubImage(1, 0));
+		ResourceManager.INSTANCE.putImage("blue_highlight", tiles.getSubImage(2, 0));
+		ResourceManager.INSTANCE.putImage("red_highlight", tiles.getSubImage(3, 0));
+
+		level = new Level(10, 10);
+	}
+
+	@Override
+	public void render(GameContainer gc, StateBasedGame game, Graphics g)
+			throws SlickException {
+		level.drawTiles();
 
 	}
 
 	@Override
-	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2)
-			throws SlickException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
+	public void update(GameContainer gc, StateBasedGame game, int delta)
 			throws SlickException {
 		// TODO Auto-generated method stub
 
