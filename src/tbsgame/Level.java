@@ -25,6 +25,10 @@ public class Level {
 		this(0, 0, width, height);
 	}
 	
+	public void setTile(int x, int y, Tile tile) {
+		tiles[y][x] = tile;
+	}
+	
 	public void setXOffset(int xOffset) {
 		this.xOffset = xOffset;
 	}

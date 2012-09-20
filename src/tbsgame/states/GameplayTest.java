@@ -8,6 +8,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import tbsgame.Level;
+import tbsgame.LevelBuilder;
 import tbsgame.ResourceManager;
 
 public class GameplayTest extends BasicGameState {
@@ -27,7 +28,7 @@ public class GameplayTest extends BasicGameState {
 		ResourceManager.INSTANCE.putImage("blue_highlight", tiles.getSubImage(2, 0));
 		ResourceManager.INSTANCE.putImage("red_highlight", tiles.getSubImage(3, 0));
 
-		level = new Level(10, 10);
+		level = LevelBuilder.readLevelFile("res/testLevel.txt");
 	}
 
 	@Override
