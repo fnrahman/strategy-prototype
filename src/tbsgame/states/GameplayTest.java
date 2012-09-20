@@ -10,6 +10,8 @@ import org.newdawn.slick.state.StateBasedGame;
 import tbsgame.Level;
 import tbsgame.LevelBuilder;
 import tbsgame.ResourceManager;
+import tbsgame.tiles.ForrestTile;
+import tbsgame.tiles.GrassTile;
 
 public class GameplayTest extends BasicGameState {
 	private int stateID;
@@ -24,6 +26,8 @@ public class GameplayTest extends BasicGameState {
 			throws SlickException {
 		SpriteSheet tiles = new SpriteSheet("res/tileset.png", 32, 32);
 		ResourceManager.INSTANCE.putImage("tile_grass", tiles.getSubImage(0, 0));
+		ResourceManager.INSTANCE.putImage("tile_mountain", tiles.getSubImage(1,0));
+		ResourceManager.INSTANCE.putImage("tile_forrest", tiles.getSubImage(2, 0));
 		ResourceManager.INSTANCE.putImage("blue_highlight", tiles.getSubImage(2, 2));
 		ResourceManager.INSTANCE.putImage("red_highlight", tiles.getSubImage(3, 2));
 

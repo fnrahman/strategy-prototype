@@ -14,15 +14,18 @@ public class Level {
 		this.width = width;
 		this.height = height;
 		tiles = new Tile[height][width];
+	}
+	
+	public Level(int width, int height) {
+		this(0, 0, width, height);
+	}
+	
+	public void fillLevel(Tile t) {
 		for (int r=0; r<height; r++) {
 			for (int c=0; c<width; c++) {
 				tiles[r][c] = new GrassTile();
 			}
 		}
-	}
-	
-	public Level(int width, int height) {
-		this(0, 0, width, height);
 	}
 	
 	public void setTile(int x, int y, Tile tile) {
