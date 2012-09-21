@@ -1,6 +1,6 @@
 package tbsgame;
 
-import tbsgame.tiles.GrassTile;
+import tbsgame.tiles.Terrain;
 import tbsgame.tiles.Tile;
 
 public class Level {
@@ -20,10 +20,10 @@ public class Level {
 		this(0, 0, width, height);
 	}
 	
-	public void fillLevel(Tile t) {
+	public void fillLevel(Terrain t) {
 		for (int r=0; r<height; r++) {
 			for (int c=0; c<width; c++) {
-				tiles[r][c] = new GrassTile();
+				tiles[r][c] = new Tile(t);
 			}
 		}
 	}

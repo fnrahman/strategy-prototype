@@ -5,9 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import tbsgame.tiles.ForrestTile;
-import tbsgame.tiles.GrassTile;
-import tbsgame.tiles.MountainTile;
+import tbsgame.tiles.Terrain;
 import tbsgame.tiles.Tile;
 
 public class LevelBuilder {
@@ -63,10 +61,10 @@ public class LevelBuilder {
 			
 			for (int i=0; i<width; i++) {
 				switch(lineChars[i]) {
-					case '.': t = new GrassTile(); break;
-					case 't': t = new ForrestTile(); break;
-					case 'm': t= new MountainTile(); break;
-					default: t = new GrassTile();
+					case '.': t = new Tile(Terrain.PLAINS); break;
+					case 't': t = new Tile(Terrain.FORREST); break;
+					case 'm': t= new Tile(Terrain.MOUNTAINS); break;
+					default: t = new Tile(Terrain.PLAINS);
 				}
 				lvl.setTile(i, row, t);
 			}
